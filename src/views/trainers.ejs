@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trainers</title>
+  </head>
+  <body>
+    <%- include('header')%>
+    <h3>Trainers</h3>
+    <% if (trainers) { %>
+    <ul>
+      <% trainers.forEach((trainer) => { %>
+      <li>
+        <h5><%= trainer.name %></h5>
+        <%= trainer.pokemon1 %>, <%= trainer.pokemon2 %>, <%= trainer.pokemon3
+        %>, <%= trainer.pokemon4 %>, <%= trainer.pokemon5 %>, <%=
+        trainer.pokemon6 %>
+      </li>
+      <% }) %>
+    </ul>
+    <% } %>
+    <form action="/trainers/delete" method="post">
+      <label for="name">Input trainer name to delete</label>
+      <input type="text" name="name" id="name" required>
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
