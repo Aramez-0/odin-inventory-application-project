@@ -1,4 +1,8 @@
-const { postNewPokemon, getAllPokemon, dbDeletePokemon } = require("../db/queries");
+const {
+  postNewPokemon,
+  getAllPokemon,
+  dbDeletePokemon,
+} = require("../db/queries");
 
 exports.renderPage = async (req, res) => {
   const pokemon = await getAllPokemon();
@@ -16,7 +20,7 @@ exports.newPokemon = async (req, res) => {
 };
 
 exports.deletePokemon = async (req, res) => {
-  const name = req.body.name
-  await dbDeletePokemon(name)
-  res.redirect('/pokemon')
-}
+  const name = req.body.name;
+  await dbDeletePokemon(name);
+  res.redirect("/pokemon");
+};

@@ -10,6 +10,6 @@ const {
 trainersRouter.get("/", renderPage);
 trainersRouter.get("/new-trainer", renderNewForm);
 trainersRouter.post("/new", newTrainer);
-trainersRouter.post("/delete", deleteTrainer)
+trainersRouter.post("/delete", deleteTrainer);
 
 module.exports = trainersRouter;

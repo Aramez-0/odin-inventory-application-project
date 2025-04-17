@@ -17,8 +17,16 @@
     <% } %>
     <form action="/pokemon/delete" method="post">
       <label for="name">Input pokemon name to delete</label>
-      <input type="text" name="name" id="name" required>
-      <button>Submit</button>
+      <input type="text" name="name" id="name" required />
+      <button onclick="return confirmDeletion()">Submit</button>
     </form>
+    <script>
+      function confirmDeletion() {
+        const superSecretPassword = "Tacos!";
+        const answer = prompt(`Please enter password to delete item`);
+        if (answer != superSecretPassword) return false;
+        else return true;
+      }
+    </script>
   </body>
 </html>

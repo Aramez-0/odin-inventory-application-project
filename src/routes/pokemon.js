@@ -10,6 +10,6 @@ const {
 pokemonRouter.get("/", renderPage);
 pokemonRouter.get("/new-pokemon", renderNewForm);
 pokemonRouter.post("/new", newPokemon);
-pokemonRouter.post("/delete", deletePokemon)
+pokemonRouter.post("/delete", deletePokemon);
 
 module.exports = pokemonRouter;

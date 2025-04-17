@@ -1,4 +1,8 @@
-const { postNewTrainer, getAllTrainers, dbDeleteTrainer } = require("../db/queries");
+const {
+  postNewTrainer,
+  getAllTrainers,
+  dbDeleteTrainer,
+} = require("../db/queries");
 
 exports.renderPage = async (req, res) => {
   const trainers = await getAllTrainers();
@@ -17,7 +21,7 @@ exports.newTrainer = async (req, res) => {
 
 exports.deleteTrainer = async (req, res) => {
   const name = req.body.name;
-  console.log(name)
+  console.log(name);
   await dbDeleteTrainer(name);
   res.redirect("/trainers");
 };

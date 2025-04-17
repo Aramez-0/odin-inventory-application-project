@@ -31,3 +31,11 @@ exports.dbDeletePokemon = async (name) => {
 exports.dbDeleteTrainer = async (name) => {
   await pool.query("DELETE FROM trainer WHERE name LIKE $1", [name]);
 };
+
+exports.getPokemonOfType = async (type) => {
+  const { rows } = await pool.query(
+    "SELECT * FROM pokemon WHERE type LIKE $1",
+    [type]
+  );
+  return rows;
+};
